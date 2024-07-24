@@ -36,8 +36,8 @@ jobs:
           apt -y update
           sudo apt install -y postgresql-common
           echo ${{ secrets.PG_PASS }} > chave.pem
-          echo ${{ variable.DB_HOST }}
+          echo ${{ vars.DB_HOST }}
           chmod 600 chave.pem
           ls -all
           cat chave.pem
-          psql -d db-vb@${{ vars.DB_HOST }} -U postgres
+          psql -d db-vb@${{ vars.DB_HOST }} -U vitorbras
